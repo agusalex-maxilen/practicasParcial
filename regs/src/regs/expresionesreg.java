@@ -5,7 +5,8 @@ public class expresionesreg {
 
 
 	public static void main (String [] args){
-		System.out.println(numeroValido("01173434234"));
+		System.out.println("Numero valido: "+numeroValido("01173434234"));
+		System.out.println("Email: "+emailValido("agusalexander@hotmail.cdddom.ar"));
 		
 		/*Pattern patron = Pattern.compile("foo");
 		
@@ -19,7 +20,21 @@ public class expresionesreg {
 		}*/
 	}
 	
+	private static boolean emailValido(String num){
 	
+		
+		Pattern patron = Pattern.compile("[a-z\\-_.0-9]+"
+				+ "@[a-z\\-_.0-9]+"
+				+ "(\\."
+				+ "([a-z]){2,3})");
+		
+		Matcher matcher = patron.matcher(num);
+
+
+		
+		
+		return matcher.find();
+	}
 	private static boolean numeroValido(String num){
 	
 		
